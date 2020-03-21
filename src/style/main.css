@@ -1,0 +1,160 @@
+body, ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-width: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: #9498A1;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 吸顶导航栏 */
+
+header {
+  min-width: 700px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  /* background: #202330; */
+  /* background: #FF38A2; */
+  /* background: slateblue; */
+  /* background: skyblue; */
+  /* background: #2e2e43; */
+  background: #2D2F42;
+  padding: 0 20px;
+  box-shadow: 0 1px 7px 2px #12131B;
+  z-index: 9;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* logo */
+
+.logo-wrapper {
+  float: left;
+  position: relative;
+  height: 50px;
+  width: 190px;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  background: no-repeat url("../images/logo.png");
+  background-size: 40px 40px;
+  padding-left: 50px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #9498A1;
+  /* color: #94AFE8; */
+  /* color: #FE7C8E; */
+  /* color: #cccccc; */
+  transition: all 2s;
+}
+
+.logo:hover {
+  color: #cf6e7d;
+  text-shadow: #9498A1 1px 0px 20px;
+  transition: all 1s;
+}
+
+/* 导航栏 */
+
+.navbar {
+  float: left;
+  margin-left: 10vw;
+}
+
+/* 分栏 */
+.column{
+  float: left;
+}
+.column ul {
+  position: relative;
+  height: 50px;
+}
+
+.column li {
+  float: left;
+  margin-right: 30px;
+}
+
+.column a {
+  height: 50px;
+  line-height: 50px;
+}
+
+.highlight {
+  color: #cf6e7d;
+}
+
+.move {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 32px;
+  height: 0;
+  border-top: 2px solid #cf6e7d;
+  box-shadow: 0px 2px 7px 0px #cf6e7d;
+  transition: all .6s;
+}
+
+/* 导航栏搜索框 */
+
+.nav-searchbox {
+  width: 300px;
+  float: right;
+  position: relative;
+  height: 50px;
+}
+
+/* 主体 */
+
+.main {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
+/* 侧边栏 */
+
+.sidebar {
+  height: 100%;
+  width: 230px;
+  background: #2D2F42;
+  /* background: #2e2e43; */
+}
+
+/* 内容部分 */
+
+.content {
+  flex: 1 1 auto;
+  height: 100%;
+  background: #212331;
+}
+
+/* 底部页脚 */
