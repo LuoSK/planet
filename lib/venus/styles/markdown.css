@@ -1,0 +1,86 @@
+#markdown {
+  width: 700px;
+  padding: 20px 20px;
+  color: #D2D2C9;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  overflow-y: scroll;
+}
+
+#markdown a {
+  color: #0681d0;
+  font-weight: bold;
+}
+
+#markdown ul, ol {
+  padding: 0 20px;
+}
+
+#markdown p {
+  margin: 10px 0;
+}
+
+#markdown li {
+  margin: 0;
+  padding: 0;
+}
+
+#markdown pre code {
+  box-shadow: 0px 2px 3px -2px #12131B;
+  background-color: #2D2F42;
+  border-radius: 4px;
+  padding: 1em;
+  line-height: 1.5;
+  font-size: 14px;
+  padding-left: 10px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+#markdown pre p {
+  margin: 0;
+}
+
+#markdown blockquote {
+  margin: 0;
+  margin-left: 0px;
+  padding-left: 20px;
+  border-left: 4px solid #ccc;
+}
+
+#markdown p code {
+  /* background-color: rgb(3, 75, 75); */
+  background-color: rgb(71, 37, 65);
+  color: rgb(255, 71, 145);
+  margin: 0 4px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+#markdown p strong, em, del {
+  margin: 0;
+}
+
+#markdown .line-numbers {
+  counter-reset: linenumber;
+}
+
+#markdown .line-numbers code>p {
+  counter-increment: linenumber;
+}
+
+#markdown .line-numbers code>p::before {
+  content: counter(linenumber);
+  left: -10px;
+  position: relative;
+  text-align: right;
+  width: 2em;
+  display: inline-block;
+  border-right: 1px solid #999;
+  padding-right: 8px;
+  font-weight: 500;
+}

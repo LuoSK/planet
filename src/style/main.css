@@ -87,9 +87,11 @@ header {
 }
 
 /* 分栏 */
-.column{
-  float: left;
+
+.column {
+  /* float: left; */
 }
+
 .column ul {
   position: relative;
   height: 50px;
@@ -153,8 +155,9 @@ header {
 
 .content {
   flex: 1 1 auto;
-  height: 100%;
   background: #212331;
+  position: relative;
+  min-width: 740px;
 }
 
 /* 底部页脚 */

@@ -1,3 +1,4 @@
+
 (function() {
   var curWidth = 32;
   var curLeft = 0;

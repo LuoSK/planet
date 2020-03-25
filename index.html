@@ -6,12 +6,19 @@
   <meta name='generator' content='plant demo'>
   <meta charset="utf-8">
   <title>Plant demo | Workshop</title>
-  <meta name='viewport' content="width=device-wdith,initial-scale=1">
+  <meta name='viewport' content="width=device-width,initial-scale=1">
   <!-- fonts -->
   <!-- stylesheets -->
   <link rel="stylesheet" href="./src/style/main.css">
   <!-- favicon -->
   <link rel="shortcut icon" href="./favicon.ico">
+  <!-- markdown 依赖 -->
+  <link rel="stylesheet" href="./lib/venus/styles/markdown.css">
+  <link rel="stylesheet" href="./lib/venus/styles/paraiso-dark.css">
+  <script src='./lib/venus/mdreader.js'></script>
+  <script async src='./src/script/markdown.js'></script>
+  <script async src="./lib/venus/venus.js"></script>
+  <script async src="./lib/venus/highlight/highlight.pack.js"></script>
 </head>
 
 <body>
@@ -40,7 +47,9 @@
 
     <div class='main'>
       <div class='sidebar'></div>
-      <div class='content'></div>
+      <div class='content'>
+        <div id='markdown'></div>
+      </div>
     </div>
 
     <footer></footer>
