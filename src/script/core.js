@@ -52,7 +52,7 @@ new Promise((resolve) => {
             </div>
            </div>
           <div class='news-info-img'>
-            <img src="${img}" alt="">
+            <img src=".${img}" alt="">
           </div>
         </div>`
     }
