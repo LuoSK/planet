@@ -2,7 +2,7 @@ let router = new HashRouter()
 let container = document.getElementById('container')
 new Promise((resolve) => {
   var xhr = new XMLHttpRequest();
-  xhr.open('get', './articles.json', true)
+  xhr.open('get', '.' + '/articles.json', true)
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       resolve(xhr.responseText)
@@ -32,7 +32,7 @@ new Promise((resolve) => {
         let div = document.createElement('div')
         div.id = 'markdown'
         container.appendChild(div)
-        mdreader(`${url}.md`).then(res => {
+        mdreader(`.${url}.md`).then(res => {
           Venus(res, "markdown");
         });
       })
