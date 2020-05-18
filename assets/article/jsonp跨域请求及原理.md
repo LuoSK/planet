@@ -1,0 +1,49 @@
+#### 域的概念
+若 ***协议*** + ***域名*** + ***端口号*** 均相同，则为同域
+##### 跨域请求
+所谓跨域请求是指：当前发起请求的域与该请求所指向资源的所在域不同。
+
+利用<script><img><iframe>等具有src属性的标签可以不受同源策略影响的特性，来进行跨域请求数据。
+#### json
+一种基于文本的数据交换方式，也叫数据描述格式。
+#### jsonp
+我们可以用一个callback函数包裹一段json格式的数据，利用script的跨域能力，当数据返回到前端，执行这个callback把数据读取出来。
+
+>前端代码
+```js
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <button onclick="jsonpServer('jsonp.js')">JSONP</button>
+</body>
+<script>
+  function jsonpServer(url) {
+    var script = document.createElement("script");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("src", url);
+    document.body.appendChild(script);
+  }
+  function JSON_CALLBACK(data) {
+    console.log(data);
+  }
+</script>
+
+</html>
+```
+>后端代码
+
+```js
+var data = [
+  {
+    id: "1",
+    name: "wsscat"
+  },
+  { id: "2", name: "asw" }
+];
+JSON_CALLBACK(data);
+```

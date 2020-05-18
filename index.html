@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang='zh-cn'>
 
-
 <head>
-  <meta name='generator' content='plant demo'>
+  <meta name='generator' content="planet demo">
   <meta charset="utf-8">
-  <title>Plant demo | Workshop</title>
-  <meta name='viewport' content="width=device-width,initial-scale=1">
-  <!-- fonts -->
-  <!-- stylesheets -->
-  <link rel="stylesheet" href="./src/style/main.css">
-  <!-- favicon -->
-  <link rel="shortcut icon" href="./favicon.ico">
+  <title>Planet Demo | Workshop</title>
+  <link rel="shortcut icon" href="/favicon.ico">
+
   <!-- markdown 依赖 -->
   <link rel="stylesheet" href="./lib/venus/styles/markdown.css">
   <link rel="stylesheet" href="./lib/venus/styles/paraiso-dark.css">
   <script src='./lib/venus/mdreader.js'></script>
-  <script async src='./src/script/markdown.js'></script>
   <script async src="./lib/venus/venus.js"></script>
   <script async src="./lib/venus/highlight/highlight.pack.js"></script>
+  <!-- <script src="./src/script/muban.js" defer></script> -->
+  <script src='./src/script/router/hash-router.js'></script>
+  <script src='./src/script/core.js' defer></script>
+
+  <link rel="stylesheet" href="./src/style/main2.css">
 </head>
 
 <body>
-  <div class='wrapper'>
-    <header>
-      <div class='logo-wrapper'>
-        <a class='logo' href="./index.html">
-          <span> PLANET DEMO</span>
-        </a>
-      </div>
-      <div class='navbar'>
-        <div class='column'>
-          <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#">工作台</a></li>
-            <li><a href="#">配色卡</a></li>
-            <li><a href="#">关于</a></li>
-            <li class='move'></li>
-          </ul>
-        </div>
-        <div class='nav-searchbox'></div>
-      </div>
-
-
-    </header>
-
-    <div class='main'>
-      <div class='sidebar'></div>
-      <div class='content'>
-        <div id='markdown'></div>
-      </div>
+  <header>
+    <div class=logo-wrapper>
+      <a class='logo' href="./index.html">
+        <span>Planet Demo</span>
+      </a>
     </div>
 
-    <footer></footer>
+    <ul class='global-navbar'>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">分类</a></li>
+      <li><a href="#">工作台</a></li>
+      <li><a href="#">后台管理</a></li>
+    </ul>
+
+    <div class='nav-searchbox'>
+      <input type="text" name="" id="" placeholder="在站内搜索">
+    </div>
+  </header>
+  <div class='wrapper'>
+    <div class='main clearfix'>
+      <div class='main-left'>
+        <div class='main-square'>
+          <h5>计算机</h5>
+          <ul>
+            <li>
+              <a class='main-square-item' href="#">
+                <img src="./src/images/front-end-square.png" alt="">
+                <span>前端</span>
+              </a>
+            </li>
+            <li>
+              <a class='main-square-item' href="#">
+                <img src="./src/images/back-end-square.png" alt="">
+                <span>后端</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class='main-square'>
+          <h5>生活</h5>
+          <ul>
+            <li>
+              <a class='main-square-item' href="#">
+                <img src="./src/images/game-square.png" alt="">
+                <span>游戏</span>
+              </a>
+            </li>
+            <li><a class='main-square-item' href="#">
+                <img src="./src/images/music-square.png" alt="">
+                <span>音乐</span>
+              </a>
+            </li>
+            <li><a class='main-square-item' href="#">
+                <img src="./src/images/tv-square-2.png" alt="">
+                <span>影视</span>
+              </a>
+            </li>
+            <li>
+              <a class='main-square-item' href="#">
+                <img src="./src/images/habit-square.png" alt="">
+                <span>乐趣</span>
+              </a>
+            </li>
+            <li>
+              <a class='main-square-item' href="#">
+                <img src="./src/images/life-square.png" alt="">
+                <span>闲谈</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class='main-middle'>
+        <div class='main-middle-news' id="container">
+        </div>
+
+
+      </div>
+      <div class='main-right'>这里可以放广告的;可以播放音乐;或者一些自定义的插件，总之我都没想好</div>
+
+    </div>
   </div>
-  <!-- js source -->
-  <script src='./src/script/index.js'></script>
+
+
+
+  <footer></footer>
 </body>
 
 </html>

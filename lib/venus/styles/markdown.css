@@ -1,14 +1,26 @@
 #markdown {
-  width: 700px;
   padding: 20px 20px;
   color: #D2D2C9;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: 16px;
+}
 
-  overflow-y: scroll;
+#markdown hr {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+  border: none;
+  opacity: 0.5;
+  box-shadow: 0px 0px 0.5px 0.5px #e4e4e4;
+}
+
+#markdown>h1, h2, h3, h4, h5, h6 {
+  color: rgba(232, 154, 190, .8)
+}
+
+#markdown h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  display: inline;
+  content: "# ";
+  color: rgba(232, 154, 190, .8)
 }
 
 #markdown a {
