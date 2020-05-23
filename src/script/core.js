@@ -1,21 +1,21 @@
-let router = new HashRouter()
-let container = document.getElementById('container')
+let router = new HashRouter();
+let container = document.getElementById("container");
 new Promise((resolve) => {
   var xhr = new XMLHttpRequest();
-  xhr.open('get', '.' + '/articles.json', true)
+  xhr.open("get", "." + "/articles.json", true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      resolve(xhr.responseText)
+      resolve(xhr.responseText);
     }
-  }
-  xhr.send(null)
+  };
+  xhr.send(null);
 })
-  .then(res => {
-    let data = JSON.parse(res)
-    let length = data.length
-    let token = ''
+  .then((res) => {
+    let data = JSON.parse(res);
+    let length = data.length;
+    let token = "";
     for (let i = 0; i < length; i++) {
-      const obj = data[i]
+      const obj = data[i];
       const time = obj.time,
         comments = obj.comments,
         title = obj.title,
@@ -24,18 +24,27 @@ new Promise((resolve) => {
         url = obj.url,
         square = obj.square,
         author = obj.author,
-        img = obj.img
+        img = obj.img;
 
-      //注册页面
+      //注册文章页面
       router.register(url, () => {
-        container.innerHTML = ''
-        let div = document.createElement('div')
-        div.id = 'markdown'
-        container.appendChild(div)
-        mdreader(`.${url}.md`).then(res => {
+        container.innerHTML = `
+        <div class='article-meta'>
+            <div class='article-title'>${title}</div>
+            <div class='article-square'>${square}</div>
+           
+            <div class='article-author'>由 <a>${author}</a></>
+            <div class='article-time'>发布于 ${time}</div>
+        </div>
+        `;
+
+        let md = document.createElement("div");
+        md.id = "markdown";
+        container.appendChild(md);
+        mdreader(`.${url}.md`).then((res) => {
           Venus(res, "markdown");
         });
-      })
+      });
       //首页
       token += `<div class='news-info clearfix' href="#">
           <div class='news-info-article' style='position: relative;'>
@@ -54,27 +63,20 @@ new Promise((resolve) => {
           <div class='news-info-img'>
             <img src=".${img}" alt="">
           </div>
-        </div>`
+        </div>`;
     }
     //注册首页
     router.registerIndex(() => {
-      container.innerHTML = token
-    })
+      container.innerHTML = token;
+    });
     //404
     router.registerNotFound(() => {
-      container.innerHTML = '页面未找到'
-    })
+      container.innerHTML = "页面未找到";
+    });
     //异常处理
     router.registerError((e) => {
-      container.innerHTML = '页面异常，错误消息：<br>' + e.message
-    })
+      container.innerHTML = "页面异常，错误消息：<br>" + e.message;
+    });
 
-    router.load()
-  })
-
-
-
-
-
-
-
+    router.load();
+  });

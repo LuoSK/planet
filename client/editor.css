@@ -1,0 +1,144 @@
+.editor-container {
+  margin: 0 auto;
+  background-color: #fafafa;
+  border: 1px solid lightsalmon;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.editor-label {
+  color: #555;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.editor-input {
+  color: #555;
+  margin-left: 40px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  outline: none;
+  vertical-align: middle;
+  border: none;
+  font-size: 20px;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 4px;
+  width: 30%;
+  transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.editor-input:focus {
+  box-shadow: inset 0 0px 2px rgba(0, 0, 0, .075), 0 0 6px lightpink;
+  border-color: lightpink;
+}
+
+.editor-textarea {
+  padding: 6px 12px;
+  margin: 10px 0px;
+  color: #555;
+  width: 90%;
+  resize: none;
+  font-size: 20px;
+  min-height: 600px;
+  outline: none;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 4px;
+  transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.editor-textarea:focus {
+  box-shadow: inset 0 0px 2px rgba(0, 0, 0, .075), 0 0 6px lightpink;
+  border-color: lightpink;
+}
+
+.editor-cover {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  background: url('./update.png') no-repeat center center;
+  background-color: #e3e3e3;
+  background-size: 100px 100px;
+}
+
+.editor-cover img {
+  transition: all .2s;
+}
+
+.editor-cover:hover img {
+  transform: scale(1.08);
+}
+
+.editor-cover::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #555;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .4s;
+  z-index: 2;
+}
+
+.editor-cover:hover::before {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+.editor-cover::after {
+  z-index: 3;
+  position: absolute;
+  letter-spacing: 2px;
+  line-height: 300px;
+  color: #fff;
+  content: "建议200×85px";
+  background: url('./update.png') no-repeat center center;
+  background-size: 100px 100px;
+  width: 100%;
+  height: 170px;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: all .4s;
+  opacity: 0;
+}
+
+.editor-cover:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+#select-image {
+  visibility: hidden;
+}
+
+#pre-cover[src=''] {
+  opacity: 0;
+}
+
+.editor-button {
+  margin: 0 20px;
+  padding: 12px 20px;
+  letter-spacing: 4px;
+  font-size: 20px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  color: #777;
+  background-color: #eee;
+  transition: all .2s;
+  box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.editor-button:active {
+  background-color: #f6f6f6;
+  box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(5px)
+}

@@ -25,11 +25,13 @@ body, ul, li, span, h5, img {
 body {
   background-color: #2e2e43;
   color: #9498A1;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
 }
 
 a {
   text-decoration: none;
   color: #9498A1;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
 }
 
 li {
@@ -134,7 +136,7 @@ header {
 .main {
   font-size: 20px;
   background-color: transparent;
-  width: 1140px;
+  width: 100vw;
   margin: 0 auto;
 }
 
@@ -235,11 +237,12 @@ header {
 .news-info {
   display: block;
   margin: 50px auto;
-  width: 86%;
+  width: 80%;
 }
 
 .news-info-article {
   float: left;
+  width: 60%;
 }
 
 .news-info-title {
@@ -284,12 +287,12 @@ header {
 }
 
 .news-excerpt {
-  margin: 8px 0 4px 0;
-  font-size: 12px;
+  margin: 0px 0 4px 0;
+  font-size: 14px;
   line-height: 1.5;
   text-overflow: ellipsis;
   opacity: 0.7;
-  width: 400px;
+  width: 100%;
   text-indent: 1rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -330,13 +333,73 @@ header {
   /* box-shadow: 0px 1px 7px 2px #12131b */
 }
 
+/* 文章头部 */
+
+.article-meta {
+  padding: 10px 20px 0;
+}
+
+.article-title {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.article-square {
+  display: inline-block;
+  font-size: 14px;
+  background-color: rgba( 232, 154, 190, 0.2);
+  color: #cf6e7d;
+  font-weight: 400;
+  border-radius: 2px;
+  padding: 1px 4px;
+  letter-spacing: 2px;
+}
+
+.article-author {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.article-author::before {
+  display: inline-block;
+  content: '·';
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0 4px;
+  color: rgba( 232, 154, 190, 0.4);
+}
+
+.article-time {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
 /* 右侧导航栏 */
 
 .main-right {
-  padding-top: 25px;
-  width: 18%;
+  padding: 10px 0;
   height: 1000px;
   float: left;
+  width: 18%;
+}
+
+.right-ads {
+  margin: 10px 10px;
+  line-height: 200px;
+  border-radius: 2px;
+  background-color: rgba(148, 152, 161, .2);
+  font-size: 16px;
+  color: #9498A1;
+  text-align: center;
+}
+
+.right-ctx {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 /* 底部信息 */

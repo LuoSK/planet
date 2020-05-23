@@ -1,20 +1,20 @@
 new Promise((resolve) => {
   var xhr = new XMLHttpRequest();
-  xhr.open('get', '/articles.json', true)
+  xhr.open("get", "/articles.json", true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      resolve(xhr.responseText)
+      resolve(xhr.responseText);
     }
-  }
-  xhr.send(null)
+  };
+  xhr.send(null);
 })
-  .then(res => {
-    let data = JSON.parse(res)
-    let length = data.length
-    let container = document.getElementById('container')
-    let token = ''
+  .then((res) => {
+    let data = JSON.parse(res);
+    let length = data.length;
+    let container = document.getElementById("container");
+    let token = "";
     for (let i = 0; i < length; i++) {
-      const obj = data[i]
+      const obj = data[i];
       const time = obj.time,
         comments = obj.comments,
         title = obj.title,
@@ -23,7 +23,7 @@ new Promise((resolve) => {
         url = obj.url,
         square = obj.square,
         author = obj.author,
-        img = obj.img
+        img = obj.img;
       token += `<div class='news-info clearfix' href="#">
       <div class='news-info-article' style='position: relative;'>
         <div class='news-info-meta' style='position: absolute;top: -18px;'>
@@ -41,7 +41,7 @@ new Promise((resolve) => {
       <div class='news-info-img'>
         <img src="${img}" alt="">
       </div>
-    </div>`
+    </div>`;
     }
-    container.innerHTML = token
-  })
+    container.innerHTML = token;
+  });

@@ -1,0 +1,4 @@
+var config={
+  "api_url": "",
+  "article": "../database/article.json"
+}

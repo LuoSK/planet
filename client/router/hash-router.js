@@ -3,16 +3,16 @@ function HashRouter() {
   window.addEventListener("hashchange", this.load.bind(this), false);
 }
 HashRouter.prototype = {
-  registerIndex: function (callback = function () {}) {
+  registerIndex: function (callback = function () { }) {
     this.routers["index"] = callback;
   },
-  register: function (hash, callback = function () {}) {
+  register: function (hash, callback = function () { }) {
     this.routers[hash] = callback;
   },
-  registerNotFound: function (callback = function () {}) {
+  registerNotFound: function (callback = function () { }) {
     this.routers["404"] = callback;
   },
-  registerError: function (callback = function () {}) {
+  registerError: function (callback = function () { }) {
     this.routers["error"] = callback;
   },
   toTop: function () {
@@ -37,14 +37,14 @@ HashRouter.prototype = {
     if (!hash) {
       handler = this.routers.index;
     } else if (!this.routers.hasOwnProperty(hash)) {
-      handler = this.routers["404"] || function () {};
+      handler = this.routers["404"] || function () { };
     } else {
       handler = this.routers[hash];
     }
     try {
       handler.call(this);
     } catch (e) {
-      (this.routers["error"] || function () {}.call(this.e));
+      (this.routers["error"] || function () { }.call(this.e));
     }
   },
 };
