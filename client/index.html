@@ -7,7 +7,7 @@
   <script src="./config.json"></script>
   <script src='../lib/wave.js'></script>
   <script src="./router/hash-router.js"></script>
-  <script src="./index.js" defer></script>
+  <script src="./main.js" defer></script>
   <link rel="shortcut icon" href="./faviocn.ico" type="image/x-icon">
   <link rel="stylesheet" href="./style.css">
 
@@ -38,14 +38,16 @@
   </div>
   <script>
     window.onbeforeunload = function (e) {
-      if (/^(#\/articles\/editor)/.exec(location.hash)) {
-        var e = window.event || e;
-        e.returnValue = ("确定离开当前页面吗？");
-      }
+      // if (/^(#\/articles\/editor)/.exec(location.hash)) {
+      //   var e = window.event || e;
+      //   e.returnValue = ("确定离开当前页面吗？");
+      // }
     }
 
   </script>
-  <link rel="stylesheet" href="./editor.css">
+  <link rel="stylesheet" href="./pages/editor/editor.css">
+  <link rel="stylesheet" href="./pages/index/index.css">
+
 </body>
 
 </html>

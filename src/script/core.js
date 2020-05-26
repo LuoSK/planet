@@ -1,8 +1,11 @@
 let router = new HashRouter();
+let loading = document.getElementById('loading-animation')
+loading.hidden = false;
 let container = document.getElementById("container");
+
 new Promise((resolve) => {
   var xhr = new XMLHttpRequest();
-  xhr.open("get", "." + "/articles.json", true);
+  xhr.open("get", '/database/article.json', true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       resolve(xhr.responseText);
@@ -28,6 +31,7 @@ new Promise((resolve) => {
 
       //注册文章页面
       router.register(url, () => {
+        loading.hidden = false;
         container.innerHTML = `
         <div class='article-meta'>
             <div class='article-title'>${title}</div>
@@ -44,6 +48,7 @@ new Promise((resolve) => {
         mdreader(`.${url}.md`).then((res) => {
           Venus(res, "markdown");
         });
+        loading.hidden = true;
       });
       //首页
       token += `<div class='news-info clearfix' href="#">
@@ -56,8 +61,8 @@ new Promise((resolve) => {
             <div class='news-excerpt'>${excerpt}</div>
             <div class='news-info-meta'>
               <span class='news-author'>${author}</span>
-              <span class='news-hot'>${hot}</span>
-              <span class='news-comment'>${comments}</span>
+              <span class='news-hot'>${hot || 0}</span>
+              <span class='news-comment'>${comments || 0}</span>
             </div>
            </div>
           <div class='news-info-img'>
@@ -67,6 +72,7 @@ new Promise((resolve) => {
     }
     //注册首页
     router.registerIndex(() => {
+      loading.hidden = true;
       container.innerHTML = token;
     });
     //404

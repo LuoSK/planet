@@ -169,6 +169,25 @@ table button {
   transition: all 0.1s ease-in-out;
 }
 
+.key-button {
+  letter-spacing: 4px;
+  font-size: 20px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  color: #777;
+  background-color: #eee;
+  transition: all .2s;
+  box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.key-button:active {
+  background-color: #f6f6f6;
+  box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(5px)
+}
+
 /* font-face */
 
 @font-face {

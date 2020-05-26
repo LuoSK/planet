@@ -8,7 +8,10 @@
   <link rel="shortcut icon" href="./favicon.ico">
   <script src='./src/script/router/hash-router.js'></script>
   <script src='./src/script/core.js' defer></script>
-  <link rel="stylesheet" href="./src/style/main2.css">
+  <link rel="stylesheet" href="./src/style/animation.css">
+  <link rel="stylesheet" href="./src/style/main.css">
+
+
   <!-- markdown 依赖 -->
   <link rel="stylesheet" href="./lib/venus/styles/markdown.css">
   <link rel="stylesheet" href="./lib/venus/styles/paraiso-dark.css">
@@ -20,6 +23,7 @@
 </head>
 
 <body>
+
   <header>
     <div class=logo-wrapper>
       <a class='logo' href="./index.html">
@@ -39,6 +43,7 @@
     </div>
   </header>
   <div class='wrapper'>
+
     <div class='main clearfix'>
       <div class='main-left'>
         <div class='main-square'>
@@ -94,7 +99,18 @@
 
       </div>
       <div class='main-middle'>
+        <div id='loading-animation' hidden="true">
+          <div class="chase">
+            <div class="chase-dot"></div>
+            <div class="chase-dot"></div>
+            <div class="chase-dot"></div>
+            <div class="chase-dot"></div>
+            <div class="chase-dot"></div>
+            <div class="chase-dot"></div>
+          </div>
+        </div>
         <div class='main-middle-news' id="container">
+
         </div>
 
 
@@ -118,7 +134,14 @@
 
 
 
-  <footer></footer>
+  <footer>
+    <div class='footer-icon'>
+      <a href="https://github.com/LuoSK"><img src="./src/images/github.png" alt=""></a>
+      <a href="mailto:hfshaokang@126.com"><img src="./src/images/email.png" alt=""></a>
+      <a href="#twitter"><img src="./src/images/twitter.png" alt=""></a>
+    </div>
+  </footer>
+
 </body>
 
 </html>
